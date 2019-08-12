@@ -38,17 +38,17 @@ app.get('/api/timestamp/:date_string', function(req, res) {
 
   if (formattedDateUTC instanceof Date && !isNaN(formattedDateUTC)) {
     res.json({
-      unix: formattedDateUTC.getTime() * 1000,
+      unix: formattedDateUTC.getTime(),
       utc: formattedDateUTC.toUTCString()
     });
   } else if (formattedDateUnix instanceof Date && !isNaN(formattedDateUnix)) {
     res.json({
-      unix: formattedDateUnix.getTime() * 1000,
+      unix: formattedDateUnix.getTime(),
       utc: formattedDateUnix.toUTCString()
     });
   } else {
     res.json({
-      unix: formattedDateUnix.getTime() * 1000,
+      unix: formattedDateUnix.getTime(),
       utc: formattedDateUnix.toUTCString()
     });
   }
