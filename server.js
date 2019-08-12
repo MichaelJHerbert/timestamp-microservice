@@ -41,14 +41,12 @@ app.get('/api/timestamp/:date_string', function(req, res) {
   if (formattedDateUTC instanceof Date && !isNaN(formattedDateUTC)) {
     res.json({
       unix: formattedDateUTC.getTime() * 1000,
-      utc: formattedDateUTC.toUTCString(),
-      test: 'utc'
+      utc: formattedDateUTC.toUTCString()
     });
   } else if (formattedDateUnix instanceof Date && !isNaN(formattedDateUnix)) {
     res.json({
       unix: formattedDateUnix.getTime() * 1000,
-      utc: formattedDateUnix.toUTCString(),
-      test: 'unix'
+      utc: formattedDateUnix.toUTCString()
     });
   } else {
     res.json({
